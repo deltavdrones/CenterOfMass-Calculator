@@ -1,6 +1,7 @@
+.venv/
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*.asv
 .DS_Store
 Thumbs.db
-ehthumbs.db
+.vscode/
