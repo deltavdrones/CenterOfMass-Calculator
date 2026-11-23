@@ -16,8 +16,9 @@ def run(context):
 
         script_dir = os.path.dirname(os.path.realpath(__file__))
         project_root = os.path.dirname(script_dir)
-        
-        csv_path = os.path.join(project_root, 'componentes_posicao.csv')
+        data_dir = os.path.join(project_root, 'data')
+        os.makedirs(data_dir, exist_ok=True)
+        csv_path = os.path.join(data_dir, 'componentes_posicao.csv')
 
         try:
             with open(csv_path, 'a'): pass
@@ -27,7 +28,7 @@ def run(context):
         except:
             pass
 
-        with open(csv_path, mode='w', newline='') as file:
+        with open(csv_path, mode='w', newline='', encoding='utf-8-sig') as file:
             writer = csv.writer(file)
             writer.writerow(['nome', 'x_mm', 'y_mm', 'z_mm', 'vol_mm3', 'Tipo'])
             count = 0
